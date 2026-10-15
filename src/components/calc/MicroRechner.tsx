@@ -96,7 +96,7 @@ export default function MicroRechner({ lang = 'fr', methodHref, compareHref, cfe
           </div>
           <div className="grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-2">
             <SelectField id="me-dep" label={tx(lang, 'Département (CFE)', 'Département (CFE)')} value={lieu.dep} onChange={(x) => lieu.setDep(x)} options={depOptions()} />
-            <SelectField id="me-com" label={tx(lang, 'Commune du domicile de l’entreprise', 'Commune of the business address')} value={lieu.code} onChange={lieu.setCode} options={lieu.communes.map((x) => ({ value: x.c, label: x.n }))} />
+            <SelectField id="me-com" label={tx(lang, 'Commune du domicile de l’entreprise', 'Commune of the business address')} value={lieu.code} onChange={lieu.setCode} options={lieu.options} />
           </div>
           <details className="rounded-lg border border-navy-200 p-3">
             <summary className="cursor-pointer text-sm font-semibold text-navy-800">{tx(lang, 'Foyer fiscal, année d’activité, dépenses', 'Household, year of activity, expenses')}</summary>

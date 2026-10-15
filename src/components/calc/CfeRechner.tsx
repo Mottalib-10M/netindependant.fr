@@ -59,7 +59,7 @@ export default function CfeRechner({ lang = 'fr', methodHref, preset = {}, initC
         <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
           <div className="grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-2">
             <SelectField id="cf-dep" label={tx(lang, 'Département', 'Département')} value={lieu.dep} onChange={(x) => lieu.setDep(x)} options={depOptions()} />
-            <SelectField id="cf-com" label={tx(lang, 'Commune du domicile de l’entreprise', 'Commune of the business address')} value={lieu.code} onChange={lieu.setCode} options={lieu.communes.map((x) => ({ value: x.c, label: x.n }))} />
+            <SelectField id="cf-com" label={tx(lang, 'Commune du domicile de l’entreprise', 'Commune of the business address')} value={lieu.code} onChange={lieu.setCode} options={lieu.options} />
           </div>
           <div className="grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-2">
             <NumberField id="cf-ca" label={tx(lang, 'Chiffre d’affaires de l’année N-2', 'Turnover two years earlier (N-2)')} value={ca} onChange={setCa} unit="€" max={10_000_000} lang={lang} help={tx(lang, 'ramené à 12 mois', 'scaled to 12 months')} />

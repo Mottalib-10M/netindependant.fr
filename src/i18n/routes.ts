@@ -7,7 +7,7 @@ const R = (id: string, fr: string, en: string, noindex = false): RouteDef<Locale
 /** Pages du cœur. Guides et outils viennent de `src/content/` (lib/guides.ts). */
 const CORE: RouteDef<Locale>[] = [
   { id: 'home', paths: { fr: '/fr/', en: '/en/' } },
-  R('method', 'methode-de-calcul', 'calculation-method'),
+  R('method', 'methode-de-calcul', 'method'),
   R('about', 'a-propos', 'about'),
   R('widget', 'widget', 'widget', true),
   R('contact', 'contact', 'contact', true),

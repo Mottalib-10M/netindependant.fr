@@ -22,7 +22,7 @@ export async function chargerDepartement(dep: string): Promise<Commune[]> {
   return l;
 }
 
-export const depOptions = () => DEPARTEMENTS.map((x) => ({ value: x.d, label: `${x.d} · ${x.n}` }));
+export const depOptions = () => DEPARTEMENTS.map((x) => ({ value: x.d, label: `${x.n} (${x.d})` }));
 
 /** État département + commune, avec chargement à la demande. Premier rendu : Paris (hydratation stable). */
 export function useCommune(initDep = DEP_DEFAUT, initCom = COMMUNE_DEFAUT, initList?: Commune[]) {
@@ -30,6 +30,10 @@ export function useCommune(initDep = DEP_DEFAUT, initCom = COMMUNE_DEFAUT, initL
   const [dep, setDepState] = useState(initDep);
   const [communes, setCommunes] = useState<Commune[]>(cache[initDep] ?? initList ?? COMMUNES_PARIS);
   const [code, setCode] = useState(initCom);
+  // La longue liste des communes n'est rendue qu'après le montage : le HTML servi ne porte que la
+  // commune choisie (même premier rendu côté serveur et navigateur, page plus légère).
+  const [monte, setMonte] = useState(false);
+  useEffect(() => { setMonte(true); }, []);
   useEffect(() => {
     let vivant = true;
     chargerDepartement(dep).then((l) => {
@@ -41,5 +45,6 @@ export function useCommune(initDep = DEP_DEFAUT, initCom = COMMUNE_DEFAUT, initL
   }, [dep]);
   const commune = communes.find((c) => c.c === code) ?? communes[0];
   const setDep = (d: string, com?: string) => { setDepState(d); if (com) setCode(com); };
-  return { dep, setDep, code, setCode, communes, commune };
+  const options = (monte ? communes : commune ? [commune] : []).map((x) => ({ value: x.c, label: x.n }));
+  return { dep, setDep, code, setCode, communes, commune, options };
 }
