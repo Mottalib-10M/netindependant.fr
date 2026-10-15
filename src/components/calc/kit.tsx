@@ -97,7 +97,7 @@ export function Kopf({ label, wert, unter }: { label: string; wert: string; unte
 export function Hinweis({ lang, methodHref }: { lang: L; methodHref?: string }) {
   return (
     <p className="mt-3 text-xs text-navy-600">
-      {tx(lang, 'Estimation avec les taux 2026 de l’Urssaf et le barème fiscal 2026, pas un conseil personnalisé : seuls l’Urssaf et l’administration fiscale établissent vos montants. ', 'Estimate using 2026 Urssaf rates and the 2026 tax scale, not personal advice: only the Urssaf and the tax office set your actual amounts. ')}
+      {tx(lang, 'Estimation avec les taux 2026 de l’Urssaf et le barème fiscal 2026, pas un conseil personnalisé : seuls l’Urssaf et l’administration fiscale établissent vos montants. ', 'Estimate only, using 2026 Urssaf rates and the 2026 tax scale, not tax advice: only the Urssaf and the tax office set your actual amounts. ')}
       {methodHref && <a className="underline" href={methodHref}>{tx(lang, 'Méthode de calcul', 'How we calculate')}</a>}
     </p>
   );

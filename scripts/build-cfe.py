@@ -45,3 +45,17 @@ for d, lst in sorted(out.items()):
     index.append({'d': d, 'n': deps.get(d, d), 'k': len(lst)})
 json.dump({'millesime': 2025, 'source': 'DGFiP, REI 2025', 'departements': index}, open(os.path.join(root, 'src/data/cfe-departements.json'), 'w'), ensure_ascii=False, indent=0)
 print(sum(len(v) for v in out.values()), 'communes,', len(out), 'départements')
+
+# Détail des grandes villes (pages par ville et mini-simulateur cfeVille) : taux par bénéficiaire.
+VILLES = ['75056', '13055', '69123', '31555', '33063', '59350']
+detail = []
+for row in csv.DictReader(open(rei, encoding='latin-1'), delimiter=';'):
+    d, c = row['DEP'].strip(), row['COM'].strip()
+    code = d + c if len(d) == 2 else d + c[-2:]
+    if code not in VILLES: continue
+    parts = {k: round(f(row.get(k)) / 100, 6) for k in ('P12', 'P22', 'P32', 'P52', 'P52gGEMAPI', 'P52TASA', 'P52TSC')}
+    bases = [int(float(row[f'BAMINTCT{i}'])) if (row.get(f'BAMINTCT{i}') or '').strip() not in ('', '0') else None for i in range(1, 7)]
+    detail.append({'c': code, 'n': cog.get(code, row['LIBCOM'].strip()), 'dep': d, 'fiscalite': row['OPTEPCI'].strip(), 'parts': parts, 't': round(sum(parts.values()), 6), 'b': bases})
+detail.sort(key=lambda x: VILLES.index(x['c']))
+json.dump({'millesime': 2025, 'source': 'DGFiP, REI 2025', 'villes': detail}, open(os.path.join(root, 'src/data/cfe-villes.json'), 'w'), ensure_ascii=False, indent=1)
+print(len(detail), 'villes détaillées')

@@ -13,14 +13,15 @@ import { readParams, num, str, updateURL } from '../../lib/url-state';
 import { useCommune, depOptions } from './communes';
 import { Zeilen, Aktionen, Kopf, Rechenweg, Hinweis, kasten, rahmen, raster, tx, fm, type L } from './kit';
 
-interface Props { lang?: L; methodHref?: string; preset?: { ca?: number } }
-export default function CfeRechner({ lang = 'fr', methodHref, preset = {} }: Props) {
+import type { Commune } from '../../lib/engine/cfe';
+interface Props { lang?: L; methodHref?: string; preset?: { ca?: number; dep?: string; com?: string }; initCommunes?: Commune[] }
+export default function CfeRechner({ lang = 'fr', methodHref, preset = {}, initCommunes }: Props) {
   const f = fm(lang);
   const d = { ca: preset.ca ?? 30000, annee: '3', artisan: '0' };
   const [ca, setCa] = useState(d.ca);
   const [annee, setAnnee] = useState(d.annee);
   const [artisan, setArtisan] = useState(d.artisan);
-  const lieu = useCommune();
+  const lieu = useCommune(preset.dep, preset.com, initCommunes);
   useEffect(() => {
     const u = readParams(window.location.search); if (![...u.keys()].length) return;
     setCa(num(u, 'ca', d.ca)); setAnnee(str(u, 'an', d.annee)); setArtisan(str(u, 'art', d.artisan));

@@ -12,7 +12,7 @@ const en: typeof fr = {
   skipToContent: 'Skip to content', mainNav: 'Main navigation', breadcrumbLabel: 'Breadcrumb', breadcrumbHome: 'Home', menuOpen: 'Open menu',
   faqTitle: 'What self-employed people in France ask', relatedCalculators: 'See also', sourcesTitle: 'Official texts and sources', writtenBy: 'Published by',
   asOf: 'Rules', lastUpdated: 'checked on', footerValidated: 'Micro-enterprise rates and company director pay checked against the calculation model published by the Urssaf', footerBrowser: 'Calculated in your browser · no sign-up · no email · nothing is sent',
-  footerDisclaimer: 'NetIndé is an independent site published by Radif Partners. It is not the Urssaf, not the French tax office and not an accountant, and it sells no company formation service. Results are estimates based on the published 2026 rates and scales, not personal advice: your actual amounts are set by the Urssaf and the tax office.', footerPopular: '', notFound: 'There is no page at this address.',
+  footerDisclaimer: 'NetIndé is an independent site published by Radif Partners. It is not the Urssaf, not the French tax office and not an accountant, and it sells no company formation service. Results are estimates only, based on the published 2026 rates and scales; they are not tax or financial advice, and your actual amounts are set by the Urssaf and the tax office.', footerPopular: '', notFound: 'There is no page at this address.',
   readMore: 'Read more',
 };
 export function t(lang: Locale) { return lang === 'en' ? en : fr; }

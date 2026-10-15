@@ -53,7 +53,7 @@ Outils `h` : `h.a(id, texte)`, `h.eur(n, décimales?)`, `h.num(n)`, `h.pct(fract
 
 ## Le plan (id · groupe · ordre · mini · slug fr · slug en)
 
-Déjà écrites : `home` (accueil), `charges-auto-entrepreneur`, outils `comparateur-statuts`, `cfe-auto-entrepreneur`, `sasu`, `eurl`, `tjm-freelance`, `portage-salarial`, et `method`, `about`.
+Déjà écrites : `home` (accueil), `charges-auto-entrepreneur`, outils `comparateur-statuts`, `cfe-auto-entrepreneur`, `sasu`, `eurl`, `tjm-freelance`, `portage-salarial`, les six pages de CFE par ville (`cfe-paris`, `cfe-lyon`, `cfe-marseille`, `cfe-toulouse`, `cfe-bordeaux`, `cfe-lille` : outil `cfe` préréglé sur la commune, statistiques tirées de `src/lib/cfe-ville.ts` et `src/data/cfe-villes.json`), et `method`, `about`. Une autre ville s'ajoute en complétant `VILLES` dans `scripts/build-cfe.py`, en rejouant le script, puis en écrivant sa page sur ce modèle avec un angle propre tiré de ses données.
 
 | id | groupe | ordre | mini | slug fr | slug en | requête visée |
 |---|---|---|---|---|---|---|

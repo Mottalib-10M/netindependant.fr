@@ -25,9 +25,10 @@ export async function chargerDepartement(dep: string): Promise<Commune[]> {
 export const depOptions = () => DEPARTEMENTS.map((x) => ({ value: x.d, label: `${x.d} · ${x.n}` }));
 
 /** État département + commune, avec chargement à la demande. Premier rendu : Paris (hydratation stable). */
-export function useCommune(initDep = DEP_DEFAUT, initCom = COMMUNE_DEFAUT) {
+export function useCommune(initDep = DEP_DEFAUT, initCom = COMMUNE_DEFAUT, initList?: Commune[]) {
+  if (initList && !cache[initDep]) cache[initDep] = initList;
   const [dep, setDepState] = useState(initDep);
-  const [communes, setCommunes] = useState<Commune[]>(cache[initDep] ?? COMMUNES_PARIS);
+  const [communes, setCommunes] = useState<Commune[]>(cache[initDep] ?? initList ?? COMMUNES_PARIS);
   const [code, setCode] = useState(initCom);
   useEffect(() => {
     let vivant = true;

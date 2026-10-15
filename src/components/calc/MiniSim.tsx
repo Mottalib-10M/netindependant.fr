@@ -21,7 +21,7 @@ export default function MiniSim({ kind, lang = 'fr', href, defaults = {}, lead =
     <div data-chrome data-mini={kind} className={`not-prose rechner-mini ${lead ? 'mb-8 mt-0' : 'my-8'} rounded-xl border border-navy-200 border-l-4 border-l-accent-600 bg-white p-4 sm:p-5`}>
       <p className="text-base font-semibold text-navy-900">{spec.title}</p>
       <div className="mt-3 grid grid-cols-1 gap-5 sm:grid-cols-2 [&>*]:min-w-0">
-        <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
+        <form className="space-y-3" onSubmit={(e) => e.preventDefault()} {...(lead ? {} : { 'data-simulateur-secondaire': '' })}>
           {spec.inputs.map((i) => i.options
             ? <SelectField key={i.id} id={`m-${kind}-${i.id}`} label={i.label} value={String(v[i.id])} onChange={(x) => set(i.id)(Number(x))} options={i.options} />
             : <NumberField key={i.id} id={`m-${kind}-${i.id}`} label={i.label} value={v[i.id]} onChange={set(i.id)} unit={i.unit} max={i.max} decimals={i.decimals} lang={lang} />)}
