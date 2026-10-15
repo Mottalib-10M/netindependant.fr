@@ -2,7 +2,7 @@
 
 Notice pour les agents qui écrivent ou prolongent le site. À lire en entier, avec `~/Documents/GitHub/RECETTE-SITE.md` §6 (unicité), §7 (FAQ), §9 et §9.3 (écriture, mini-simulateurs), §11 (titres), §17.4 (règle de vérité), §21 (bloc citable). Les faits autorisés sont dans `research/faits.md` : **rien d'autre ne s'écrit**.
 
-Site : se mettre à son compte en France et ce qu'il reste en net. Micro-entreprise, EI au réel, EURL, SASU, portage salarial, TJM. Français (`/fr/`) et anglais (`/en/`, pour une personne venue de l'étranger qui veut se mettre à son compte en France). Nom provisoire NetIndé, URL provisoire `fr-freelance.example`. Éditeur : Radif Partners (jamais de nom de personne).
+Site : se mettre à son compte en France et ce qu'il reste en net. Micro-entreprise, EI au réel, EURL, SASU, portage salarial, TJM. Français (`/fr/`) et anglais (`/en/`, pour une personne venue de l'étranger qui veut se mettre à son compte en France). Nom provisoire NetIndé, URL provisoire `netindependant.fr`. Éditeur : Radif Partners (jamais de nom de personne).
 
 ## Principe : une page = un fichier
 

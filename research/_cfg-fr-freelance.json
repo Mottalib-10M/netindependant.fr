@@ -2,7 +2,7 @@
  "volumes": "/Users/mottalib/Documents/GitHub/reports/volumes-2026-10-14/fr-freelance.csv",
  "folder": "fr-freelance",
  "outDir": "a-publier/Mottalib-10M",
- "url": "https://fr-freelance.example",
+ "url": "https://netindependant.fr",
  "locales": ["fr", "en"],
  "names": {"fr": "NetIndé", "en": "NetIndé"},
  "langTags": {"fr": "fr-FR", "en": "en-FR"},
@@ -27,7 +27,7 @@
   "fr": ["Micro-entreprise", "Cotisations des travailleurs indépendants", "SASU et EURL", "Impôt sur les sociétés", "Cotisation foncière des entreprises"],
   "en": ["French micro-enterprise scheme", "Self-employed social contributions in France", "SASU and EURL companies", "French corporate tax", "CFE local business tax"]
  },
- "email": "contact@fr-freelance.example",
+ "email": "contact@netindependant.fr",
  "accent": "#0F4C5C",
  "symbol": "AE",
  "indexnow": "7d3e91b0a4c25f86e1b9d0c47a2f6e15",

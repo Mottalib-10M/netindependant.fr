@@ -1,5 +1,5 @@
 /** Configuration centrale du site (générée par new-site.py). */
-export const SITE_URL = "https://fr-freelance.example";
+export const SITE_URL = "https://netindependant.fr";
 export const SITE_NAMES: Record<string, string> = {"fr": "NetIndé", "en": "NetIndé"};
 export const LANG_TAGS: Record<string, string> = {"fr": "fr-FR", "en": "en-FR"};
 export const OG_LOCALES: Record<string, string> = {"fr": "fr_FR", "en": "en_GB"};
@@ -17,7 +17,7 @@ export const AUTHOR_DESC: Record<string, string> = {"fr": "Radif Partners code l
  *  themes reellement traites par le site, pas une liste de mots-cles : un sujet
  *  declare ici sans page qui le couvre est une declaration fausse. */
 export const KNOWS_ABOUT: Record<string, string[]> = {"fr": ["Micro-entreprise", "Cotisations des travailleurs indépendants", "SASU et EURL", "Impôt sur les sociétés", "Cotisation foncière des entreprises"], "en": ["French micro-enterprise scheme", "Self-employed social contributions in France", "SASU and EURL companies", "French corporate tax", "CFE local business tax"]};
-export const CONTACT_EMAIL = "contact@fr-freelance.example";
+export const CONTACT_EMAIL = "contact@netindependant.fr";
 export const THEME_COLOR = '#0F4C5C';
 export const LOGO_SYMBOL = 'AE';
 export const BING_VERIFY_CODE = '';
