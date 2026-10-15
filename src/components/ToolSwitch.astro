@@ -1,0 +1,21 @@
+---
+/** Un seul endroit où chaque outil est relié à son composant (pages outils, accueil, intégration). */
+import MicroRechner from './calc/MicroRechner';
+import StatutsRechner from './calc/StatutsRechner';
+import SocieteRechner from './calc/SocieteRechner';
+import CfeRechner from './calc/CfeRechner';
+import PortageRechner from './calc/PortageRechner';
+import { route, type Locale } from '../i18n/routes';
+import type { Tool } from '../lib/guide-types';
+interface Props { tool?: Tool; lang: Locale; methodHref?: string; preset?: Record<string, never> }
+const { tool, lang, methodHref, preset = {} } = Astro.props;
+const compareHref = route('comparateur-statuts', lang);
+const cfeHref = route('cfe-auto-entrepreneur', lang);
+---
+{tool === 'micro' && <MicroRechner client:load lang={lang} methodHref={methodHref} compareHref={compareHref} cfeHref={cfeHref} preset={preset} />}
+{tool === 'statuts' && <StatutsRechner client:load lang={lang} methodHref={methodHref} preset={preset} />}
+{tool === 'tjm' && <StatutsRechner client:load lang={lang} methodHref={methodHref} mode="tjm" preset={preset} />}
+{tool === 'sasu' && <SocieteRechner client:load lang={lang} methodHref={methodHref} forme="sasu" preset={preset} />}
+{tool === 'eurl' && <SocieteRechner client:load lang={lang} methodHref={methodHref} forme="eurl" preset={preset} />}
+{tool === 'cfe' && <CfeRechner client:load lang={lang} methodHref={methodHref} preset={preset} />}
+{tool === 'portage' && <PortageRechner client:load lang={lang} methodHref={methodHref} preset={preset} />}

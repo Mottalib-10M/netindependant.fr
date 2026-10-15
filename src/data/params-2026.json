@@ -1,0 +1,571 @@
+{
+  "_lisezmoi": "Paramètres 2026 de NetIndé. Chaque valeur a été lue sur la source citée (clé `src`) à la date `retrieved_at`. Aucune valeur ne s'écrit en dur dans une page : elle se tire d'ici via h.P ou du moteur (src/lib/engine). Les cotisations des indépendants au réel suivent la réforme de l'assiette (abattement de 26 %, décret n° 2024-688) appliquée à partir des revenus 2025 ; le moteur l'applique aux revenus 2026. Le barème de l'impôt sur le revenu est celui de la loi de finances pour 2026 (revenus 2025), le dernier publié.",
+  "year": 2026,
+  "retrieved_at": "2026-10-15",
+  "valid_from": "2026-01-01",
+  "valid_to": "2026-12-31",
+  "pass": {
+    "annuel": 48060,
+    "mensuel": 4005,
+    "src": "urssafTauxAC"
+  },
+  "smic": {
+    "horaire": 12.31,
+    "mensuel_brut": 1867.02,
+    "src": "monEntreprise"
+  },
+  "micro": {
+    "src": "spCotisationsMicro",
+    "taux": {
+      "vente": 0.123,
+      "bic": 0.212,
+      "bnc": 0.256,
+      "cipav": 0.232,
+      "meubleClasse": 0.06
+    },
+    "taux_vl_total": {
+      "vente": 0.133,
+      "bic": 0.229,
+      "bnc": 0.278,
+      "cipav": 0.254
+    },
+    "vl": {
+      "vente": 0.01,
+      "bic": 0.017,
+      "bnc": 0.022,
+      "cipav": 0.022,
+      "src": "impotsVL"
+    },
+    "vl_seuil_rfr_par_part": {
+      "y2026": 29315,
+      "y2027": 29579,
+      "src": "spMicroImposition",
+      "src2026": "monEntreprise"
+    },
+    "cfp": {
+      "commercant": 0.001,
+      "artisan": 0.003,
+      "liberal": 0.002,
+      "src": "aeEssentiel"
+    },
+    "tfc": {
+      "commerce_service": 0.00044,
+      "commerce_vente": 0.00015,
+      "artisan_service": 0.0048,
+      "artisan_vente": 0.0022,
+      "src": "spTaxesChambres"
+    },
+    "abattement": {
+      "vente": 0.71,
+      "bic": 0.5,
+      "bnc": 0.34,
+      "minimum": 305,
+      "minimum_mixte": 610,
+      "src": "spMicroImposition"
+    },
+    "plafonds": {
+      "vente": 203100,
+      "services": 83600,
+      "meubleNonClasse": 15000,
+      "anciens_vente": 188700,
+      "anciens_services": 77700,
+      "src": "spPlafonds"
+    },
+    "acre": {
+      "taux_paye_avant_2026_07": 0.5,
+      "taux_paye_depuis_2026_07": 0.75,
+      "taux_acre_avant": {
+        "vente": 0.062,
+        "bic": 0.106,
+        "bnc": 0.128,
+        "cipav": 0.134
+      },
+      "taux_acre_depuis": {
+        "vente": 0.093,
+        "bic": 0.159,
+        "bnc": 0.192,
+        "cipav": 0.174
+      },
+      "delai_demande_jours": 60,
+      "src": "aeEssentiel",
+      "src2": "spAcre",
+      "src3": "urssafAcre2026"
+    },
+    "historique_bnc": {
+      "jusqu_a_2024_06": 0.211,
+      "depuis_2024_07": 0.231,
+      "y2025": 0.246,
+      "src": "monEntreprise"
+    },
+    "repartition": {
+      "vente": {
+        "maladie": 0.1005,
+        "invalidite": 0.0315,
+        "retraite_base": 0.4345,
+        "retraite_compl": 0.1975,
+        "csg_crds": 0.236
+      },
+      "bic": {
+        "maladie": 0.1005,
+        "invalidite": 0.0315,
+        "retraite_base": 0.4345,
+        "retraite_compl": 0.1975,
+        "csg_crds": 0.236
+      },
+      "bnc": {
+        "maladie": 0.041,
+        "invalidite": 0.033,
+        "retraite_base": 0.464,
+        "retraite_compl": 0.21,
+        "csg_crds": 0.252
+      },
+      "cipav": {
+        "maladie": 0.114,
+        "invalidite": 0.014,
+        "retraite_base": 0.295,
+        "retraite_compl": 0.307,
+        "csg_crds": 0.27
+      },
+      "src": "decret2025943",
+      "src2": "monEntreprise"
+    }
+  },
+  "tva": {
+    "src": "spFranchiseTva",
+    "vente": {
+      "seuil": 85000,
+      "majore": 93500
+    },
+    "services": {
+      "seuil": 37500,
+      "majore": 41250
+    },
+    "avocat_reglemente": {
+      "seuil": 50000,
+      "majore": 55000
+    },
+    "seuil_unique_abandonne": 25000
+  },
+  "cfe": {
+    "src": "spCfe",
+    "src_donnees": "rei2025",
+    "tranches_ca": [
+      10000,
+      32600,
+      100000,
+      250000,
+      500000
+    ],
+    "base_min_bornes": [
+      [
+        250,
+        597
+      ],
+      [
+        250,
+        1194
+      ],
+      [
+        250,
+        2509
+      ],
+      [
+        250,
+        4183
+      ],
+      [
+        250,
+        5974
+      ],
+      [
+        250,
+        7769
+      ]
+    ],
+    "exoneration_ca": 5000,
+    "reduction_annee_2": 0.5,
+    "taxe_additionnelle_cci": 0.0112,
+    "frais_gestion": 0.01,
+    "millesime_taux": 2025
+  },
+  "tns": {
+    "src": "urssafTauxAC",
+    "src2": "urssafReforme",
+    "src3": "decret2024688",
+    "abattement": 0.26,
+    "abattement_min_pass": 0.0176,
+    "abattement_max_pass": 1.3,
+    "maladie": {
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0.2,
+          0
+        ],
+        [
+          0.4,
+          0.015
+        ],
+        [
+          0.6,
+          0.04
+        ],
+        [
+          1.1,
+          0.065
+        ],
+        [
+          2,
+          0.077
+        ],
+        [
+          3,
+          0.085
+        ]
+      ],
+      "plafond_progressif_pass": 3,
+      "taux_au_dela": 0.065
+    },
+    "ij": {
+      "taux": 0.005,
+      "plafond_pass": 5,
+      "assiette_min_pass": 0.4
+    },
+    "retraite_base": {
+      "t1": 0.1787,
+      "t2": 0.0072,
+      "assiette_min": 5409
+    },
+    "retraite_compl": {
+      "t1": 0.081,
+      "t2": 0.091,
+      "plafond_pass": 4
+    },
+    "invalidite_deces": {
+      "taux": 0.013,
+      "assiette_min_pass": 0.115
+    },
+    "alloc_familiales": {
+      "seuil_pass": 1.1,
+      "plein_pass": 1.4,
+      "taux": 0.031
+    },
+    "csg_crds": {
+      "total": 0.097,
+      "deductible": 0.068,
+      "non_deductible": 0.029
+    },
+    "cfp": {
+      "commercant": 0.0025,
+      "artisan": 0.0029
+    },
+    "acre": {
+      "seuil_pass": 0.75,
+      "plafond_pass": 1,
+      "part_exoneree": 0.25
+    },
+    "minimums_publies": {
+      "ij": 96,
+      "retraite_base": 967,
+      "invalidite_deces": 72,
+      "cfp_commercant": 120,
+      "cfp_artisan": 139
+    },
+    "maximums_publies": {
+      "ij": 1202,
+      "retraite_compl": 17494,
+      "invalidite_deces": 625
+    }
+  },
+  "assimile": {
+    "src": "urssafTauxSalarie",
+    "src2": "monEntreprise",
+    "employeur": {
+      "maladie": 0.13,
+      "vieillesse_plafonnee": 0.0855,
+      "vieillesse_deplafonnee": 0.0211,
+      "alloc_familiales": 0.0525,
+      "atmp": 0.0208,
+      "fnal": 0.001,
+      "csa": 0.003,
+      "formation": 0.0055,
+      "taxe_apprentissage": 0.0068,
+      "agirc_t1": 0.0472,
+      "agirc_t2": 0.1295,
+      "ceg_t1": 0.0129,
+      "ceg_t2": 0.0162,
+      "cet": 0.0021,
+      "apec": 0.00036,
+      "chomage": 0.04,
+      "ags": 0.0025,
+      "prevoyance_cadre_t1": 0.015
+    },
+    "salarie": {
+      "vieillesse_plafonnee": 0.069,
+      "vieillesse_deplafonnee": 0.004,
+      "agirc_t1": 0.0315,
+      "agirc_t2": 0.0864,
+      "ceg_t1": 0.0086,
+      "ceg_t2": 0.0108,
+      "cet": 0.0014,
+      "apec": 0.00024
+    },
+    "csg": {
+      "assiette": 0.9825,
+      "deductible": 0.068,
+      "non_deductible": 0.024,
+      "crds": 0.005,
+      "abattement_plafond_pass": 4
+    },
+    "tranche2_plafond_pass": 8
+  },
+  "ir": {
+    "src": "spBareme",
+    "src2": "spCalculImpot",
+    "src3": "spQuotient",
+    "bareme": [
+      [
+        11600,
+        0
+      ],
+      [
+        29579,
+        0.11
+      ],
+      [
+        84577,
+        0.3
+      ],
+      [
+        181917,
+        0.41
+      ],
+      [
+        null,
+        0.45
+      ]
+    ],
+    "plafond_demi_part": 1807,
+    "decote": {
+      "seul": {
+        "plafond": 1982,
+        "forfait": 897
+      },
+      "couple": {
+        "plafond": 3277,
+        "forfait": 1483
+      },
+      "taux": 0.4525
+    },
+    "seuil_recouvrement": 61,
+    "abattement_salaires": {
+      "taux": 0.1,
+      "min": 509,
+      "max": 14555,
+      "src": "spFraisPro"
+    }
+  },
+  "is": {
+    "src": "spIs",
+    "taux_reduit": 0.15,
+    "seuil_reduit": 42500,
+    "taux_normal": 0.25
+  },
+  "dividendes": {
+    "src": "spDividendes",
+    "pfu": 0.314,
+    "pfu_ir": 0.128,
+    "prelevements_sociaux": 0.186,
+    "abattement_bareme": 0.4,
+    "seuil_tns_capital": 0.1
+  },
+  "portage": {
+    "src": "spPortage",
+    "minimum_brut_mensuel": 2517.13,
+    "junior": 0.7,
+    "senior": 0.75,
+    "forfait_jours": 0.85,
+    "reserve_financiere": 0.1,
+    "apport_affaires": 0.05
+  },
+  "sources": {
+    "aeEssentiel": {
+      "url": "https://www.autoentrepreneur.urssaf.fr/portail/accueil/sinformer-sur-le-statut/lessentiel-du-statut.html",
+      "label": {
+        "fr": "Urssaf, autoentrepreneur.urssaf.fr : l'essentiel du statut, taux 2026 et Acre (lu le 15 octobre 2026)",
+        "en": "Urssaf, autoentrepreneur.urssaf.fr: key facts about the scheme, 2026 rates and Acre (read 15 October 2026)"
+      }
+    },
+    "spCotisationsMicro": {
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F36232",
+      "label": {
+        "fr": "Service-public.fr, fiche F36232 : cotisations sociales du micro-entrepreneur (vérifiée le 1er janvier 2026)",
+        "en": "Service-public.fr, sheet F36232: micro-entrepreneur social contributions (checked 1 January 2026)"
+      }
+    },
+    "spPlafonds": {
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F32353",
+      "label": {
+        "fr": "Service-public.fr, fiche F32353 : seuils de chiffre d'affaires de la micro-entreprise (vérifiée le 21 février 2026)",
+        "en": "Service-public.fr, sheet F32353: micro-enterprise turnover thresholds (checked 21 February 2026)"
+      }
+    },
+    "spMicroImposition": {
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F23267",
+      "label": {
+        "fr": "Service-public.fr, fiche F23267 : impôt du micro-entrepreneur, abattements et versement libératoire (vérifiée le 13 mai 2026)",
+        "en": "Service-public.fr, sheet F23267: micro-entrepreneur income tax, allowances and flat-rate option (checked 13 May 2026)"
+      }
+    },
+    "impotsVL": {
+      "url": "https://www.impots.gouv.fr/professionnel/le-versement-liberatoire",
+      "label": {
+        "fr": "impots.gouv.fr : le versement libératoire (article modifié le 7 janvier 2026)",
+        "en": "impots.gouv.fr: the flat-rate income tax payment (page updated 7 January 2026)"
+      }
+    },
+    "spFranchiseTva": {
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F21746",
+      "label": {
+        "fr": "Service-public.fr, fiche F21746 : franchise en base de TVA (vérifiée le 1er janvier 2026)",
+        "en": "Service-public.fr, sheet F21746: VAT exemption threshold (checked 1 January 2026)"
+      }
+    },
+    "spAcre": {
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F11677",
+      "label": {
+        "fr": "Service-public.fr, fiche F11677 : Acre, conditions et démarches (vérifiée le 1er juillet 2026)",
+        "en": "Service-public.fr, sheet F11677: Acre, conditions and application (checked 1 July 2026)"
+      }
+    },
+    "urssafAcre2026": {
+      "url": "https://www.urssaf.fr/accueil/actualites/acre-nouvelles-regles-demarches.html",
+      "label": {
+        "fr": "Urssaf : Acre, nouvelles règles et démarches à partir du 1er janvier 2026",
+        "en": "Urssaf: Acre, new rules and application from 1 January 2026"
+      }
+    },
+    "spCfe": {
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F23547",
+      "label": {
+        "fr": "Service-public.fr, fiche F23547 : cotisation foncière des entreprises (vérifiée le 2 avril 2026)",
+        "en": "Service-public.fr, sheet F23547: CFE local business tax (checked 2 April 2026)"
+      }
+    },
+    "rei2025": {
+      "url": "https://www.data.gouv.fr/datasets/impots-locaux-fichier-de-recensement-des-elements-dimposition-a-la-fiscalite-directe-locale-rei-4",
+      "label": {
+        "fr": "DGFiP, fichier REI 2025 des impôts locaux (taux et bases minimum de CFE par commune), Licence Ouverte 2.0",
+        "en": "DGFiP, REI 2025 local tax file (CFE rates and minimum bases by commune), Open Licence 2.0"
+      }
+    },
+    "spTaxesChambres": {
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F32847",
+      "label": {
+        "fr": "Service-public.fr, fiche F32847 : taxes pour frais de chambres consulaires",
+        "en": "Service-public.fr, sheet F32847: chamber of commerce and trades levies"
+      }
+    },
+    "urssafTauxAC": {
+      "url": "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/taux-cotisations-ac-plnr.html",
+      "label": {
+        "fr": "Urssaf : taux et barèmes 2026 des artisans, commerçants et professions libérales non réglementées",
+        "en": "Urssaf: 2026 rates for craftspeople, traders and unregulated professions"
+      }
+    },
+    "urssafReforme": {
+      "url": "https://www.urssaf.fr/accueil/independant/comprendre-payer-cotisations/reforme-cotisations-independants.html",
+      "label": {
+        "fr": "Urssaf : réforme de l'assiette sociale et du barème des cotisations des indépendants",
+        "en": "Urssaf: reform of the self-employed contribution base and rates"
+      }
+    },
+    "decret2024688": {
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049888566",
+      "label": {
+        "fr": "Décret n° 2024-688 du 5 juillet 2024 (assiette et barème des travailleurs indépendants)",
+        "en": "Decree no. 2024-688 of 5 July 2024 (self-employed contribution base and rates)"
+      }
+    },
+    "urssafTauxSalarie": {
+      "url": "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/taux-cotisations-secteur-prive.html",
+      "label": {
+        "fr": "Urssaf : taux de cotisations du secteur privé 2026",
+        "en": "Urssaf: 2026 private-sector contribution rates"
+      }
+    },
+    "monEntreprise": {
+      "url": "https://mon-entreprise.urssaf.fr/",
+      "label": {
+        "fr": "Urssaf, mon-entreprise.urssaf.fr et son modèle de calcul publié (modele-social 11.1.0, juillet 2026)",
+        "en": "Urssaf, mon-entreprise.urssaf.fr and its published calculation model (modele-social 11.1.0, July 2026)"
+      }
+    },
+    "spBareme": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1419",
+      "label": {
+        "fr": "Service-public.fr, fiche F1419 : barème de l'impôt sur le revenu 2026 (vérifiée le 15 avril 2026)",
+        "en": "Service-public.fr, sheet F1419: 2026 income tax scale (checked 15 April 2026)"
+      }
+    },
+    "spCalculImpot": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F34328",
+      "label": {
+        "fr": "Service-public.fr, fiche F34328 : calcul de l'impôt, décote (vérifiée le 15 avril 2026)",
+        "en": "Service-public.fr, sheet F34328: income tax calculation and low-tax discount (checked 15 April 2026)"
+      }
+    },
+    "spQuotient": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2705",
+      "label": {
+        "fr": "Service-public.fr, fiche F2705 : quotient familial d'un couple, plafonnement (vérifiée le 15 avril 2026)",
+        "en": "Service-public.fr, sheet F2705: family quotient of a couple and its cap (checked 15 April 2026)"
+      }
+    },
+    "spFraisPro": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1989",
+      "label": {
+        "fr": "Service-public.fr, fiche F1989 : déduction forfaitaire de 10 % (vérifiée le 15 avril 2026)",
+        "en": "Service-public.fr, sheet F1989: the 10% flat deduction (checked 15 April 2026)"
+      }
+    },
+    "spIs": {
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F23575",
+      "label": {
+        "fr": "Service-public.fr, fiche F23575 : impôt sur les sociétés, taux réduit de 15 % (vérifiée le 17 février 2026)",
+        "en": "Service-public.fr, sheet F23575: corporate tax and the 15% reduced rate (checked 17 February 2026)"
+      }
+    },
+    "spDividendes": {
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F32963",
+      "label": {
+        "fr": "Service-public.fr, fiche F32963 : imposition des dividendes, PFU de 31,4 % (vérifiée le 21 février 2026)",
+        "en": "Service-public.fr, sheet F32963: taxation of dividends, 31.4% flat tax (checked 21 February 2026)"
+      }
+    },
+    "spPortage": {
+      "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F31620",
+      "label": {
+        "fr": "Service-public.fr, fiche F31620 : portage salarial (vérifiée le 28 mai 2026)",
+        "en": "Service-public.fr, sheet F31620: umbrella employment (portage salarial) (checked 28 May 2026)"
+      }
+    },
+    "inseeCog": {
+      "url": "https://www.insee.fr/fr/information/8377162",
+      "label": {
+        "fr": "Insee, code officiel géographique 2025 (noms des communes)",
+        "en": "Insee, 2025 official geographic code (commune names)"
+      }
+    },
+    "decret2025943": {
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052211971",
+      "label": {
+        "fr": "Décret n° 2025-943 du 8 septembre 2025 (taux globaux et répartition des cotisations des micro-entrepreneurs)",
+        "en": "Decree no. 2025-943 of 8 September 2025 (micro-entrepreneur overall rates and how they are split)"
+      }
+    }
+  }
+}

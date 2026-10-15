@@ -1,0 +1,23 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, LAST_UPDATED } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'en';
+---
+<PageLayout title="Editorial policy: how NetIndé checks every French rate" description="Editorial policy: official sources only, every 2026 rate read and dated, automatic tests against the Urssaf model, corrections published and no affiliate links of any kind." lang={lang} noindex={true} breadcrumbs={[{ label: 'Editorial policy' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Editorial policy</h1>
+    <h2>Sources</h2>
+    <p>Every rate, threshold or amount comes from an official source, read and dated: autoentrepreneur.urssaf.fr, urssaf.fr, service-public, impots.gouv.fr, Légifrance, the BOFiP tax doctrine, economie.gouv.fr and the public files of the DGFiP and Insee. A blog, a firm or a company formation site is never a source. Anything uncertain, such as a reform announced but not voted, is not published.</p>
+    <h2>One parameter file</h2>
+    <p>Values live in a single file with their source and the date they were read. No page hard-codes a rate: when a parameter changes, every page and every calculator change together.</p>
+    <h2>Checks</h2>
+    <p>Before each release, automatic tests compare the engine with the worked examples of service-public, the minimum and maximum amounts published by the Urssaf and, on a grid of cases, the calculation model the Urssaf publishes for mon-entreprise. Any gap stops the release.</p>
+    <h2>Review schedule</h2>
+    <p>Full review in January (rates, social security ceiling, income tax scale), in July (rates changed mid-year) and whenever a new REI file is published. Last review: {LAST_UPDATED}.</p>
+    <h2>Corrections</h2>
+    <p>Any error reported to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> is checked, fixed and added to the tests. Calculation rules are on <a href={route('method', lang)}>how we calculate</a>.</p>
+    <h2>Independence</h2>
+    <p>No affiliates, no commercial links to banks, company formation services or accountants, no email collection. If the site ever shows ads, they will not sit above a calculator or inside a result.</p>
+  </div>
+</PageLayout>

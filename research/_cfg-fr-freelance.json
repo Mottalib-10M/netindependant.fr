@@ -1,0 +1,45 @@
+{
+ "volumes": "/Users/mottalib/Documents/GitHub/reports/volumes-2026-10-14/fr-freelance.csv",
+ "folder": "fr-freelance",
+ "outDir": "a-publier/Mottalib-10M",
+ "url": "https://fr-freelance.example",
+ "locales": ["fr", "en"],
+ "names": {"fr": "NetIndé", "en": "NetIndé"},
+ "langTags": {"fr": "fr-FR", "en": "en-FR"},
+ "ogLocales": {"fr": "fr_FR", "en": "en_GB"},
+ "localeTag": "fr-FR",
+ "currency": "EUR",
+ "legalCountry": "France",
+ "registerLabel": "SIREN",
+ "vatLabel": "TVA",
+ "jurisdiction": "France",
+ "supervisoryAuthority": "Commission nationale de l'informatique et des libertés (CNIL)",
+ "supervisoryAuthorityUrl": "https://www.cnil.fr",
+ "authorRole": {
+  "fr": "Éditeur de simulateurs pour indépendants · micro-entreprise, EI, EURL, SASU",
+  "en": "Publisher of calculators for the self-employed in France · micro-enterprise, EI, EURL, SASU"
+ },
+ "authorDesc": {
+  "fr": "Radif Partners code les taux de l'Urssaf, le barème de l'impôt sur le revenu et la fiscalité des sociétés pour chiffrer ce qu'un indépendant garde en poche en France, sous chaque statut, et compare ses calculs au moteur publié par l'Urssaf.",
+  "en": "Radif Partners turns Urssaf contribution rates, the French income tax scale and company taxation into calculators that show what a self-employed person in France keeps under each legal form, and checks its results against the engine the Urssaf publishes."
+ },
+ "knowsAbout": {
+  "fr": ["Micro-entreprise", "Cotisations des travailleurs indépendants", "SASU et EURL", "Impôt sur les sociétés", "Cotisation foncière des entreprises"],
+  "en": ["French micro-enterprise scheme", "Self-employed social contributions in France", "SASU and EURL companies", "French corporate tax", "CFE local business tax"]
+ },
+ "email": "contact@fr-freelance.example",
+ "accent": "#0F4C5C",
+ "symbol": "AE",
+ "indexnow": "7d3e91b0a4c25f86e1b9d0c47a2f6e15",
+ "shortName": "NetIndé",
+ "description": "Simulateur auto-entrepreneur 2026 : cotisations Urssaf, impôt, CFE de votre commune et comparaison micro, EI, EURL et SASU, le net tout de suite.",
+ "port": 4383,
+ "og": [
+  {"file": "og-fr.png", "title": "Auto-entrepreneur 2026\nle net, tout de suite", "subtitle": "Cotisations · Versement libératoire · CFE par commune · EURL ou SASU", "badge": "Taux Urssaf 2026 sourcés", "brand": "NetIndé"},
+  {"file": "og-en.png", "title": "Self-employed in France 2026\nwhat you keep", "subtitle": "Micro-enterprise · Contributions · CFE · EURL or SASU", "badge": "2026 Urssaf rates, sourced", "brand": "NetIndé"}
+ ],
+ "year": 2026,
+ "founded": "2026",
+ "lastUpdated": "2026-10-15",
+ "flag": "fr"
+}

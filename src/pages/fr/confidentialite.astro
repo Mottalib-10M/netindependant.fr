@@ -1,0 +1,27 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { CONTACT_EMAIL, LEGAL, SITE_URL, LAST_UPDATED } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'fr';
+---
+<PageLayout title="Confidentialité : votre chiffre d’affaires reste chez vous" description="Politique de confidentialité (RGPD) : chiffre d’affaires, commune et foyer fiscal saisis restent dans votre navigateur ; pas de cookie, pas d’e-mail, seuls les journaux d’hébergement." lang={lang} noindex={true} breadcrumbs={[{ label: 'Confidentialité' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Politique de confidentialité</h1>
+    <p>Estimer son revenu d’indépendant, c’est saisir un chiffre d’affaires, une commune, parfois les revenus d’un conjoint. Les simulateurs de {SITE_URL} sont conçus pour que l’éditeur n’en reçoive rien, et le site ne demande jamais d’adresse e-mail.</p>
+    <h2>1. Responsable du traitement</h2>
+    <LegalIdentity lang={lang} />
+    <p>Contact : <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Aucun délégué à la protection des données n’est désigné, l’article 37 du RGPD ne l’imposant pas ici.</p>
+    <h2>2. Ce que vous saisissez</h2>
+    <p>Tous les calculs se font dans votre navigateur. <strong>Les valeurs saisies ne sont ni transmises à l’éditeur ni enregistrées.</strong> Après votre première saisie, le simulateur les recopie dans l’adresse de la page pour que vous puissiez partager un résultat ; cette adresse reste sur votre appareil tant que vous ne la transmettez pas. Quand vous choisissez un département, le navigateur télécharge la liste publique des communes et de leurs taux de CFE depuis ce site : rien de ce que vous avez saisi n’accompagne cette demande.</p>
+    <h2>3. Traitements</h2>
+    <h3>Journaux d’hébergement</h3><p>À chaque page vue, l’hébergeur traite des données techniques (adresse IP, heure, page demandée, navigateur, page d’origine) pour servir le site et le protéger. Base légale : intérêt légitime (article 6, paragraphe 1, f du RGPD) ; durée de conservation fixée par l’hébergeur.</p>
+    <h3>Aucun cookie</h3><p>Le site ne dépose aucun cookie et n’écrit rien dans le stockage de votre navigateur.</p>
+    <h3>Mesure anonyme des erreurs (Microsoft Clarity, sans cookie)</h3><p>Si elle est activée, Clarity en mode sans cookie relève les erreurs de chargement, les temps d’affichage, les clics sans effet et le défilement, pour repérer un simulateur en panne. Les champs de saisie sont masqués avant envoi et chaque visite reçoit un nouvel identifiant. Prestataire : Microsoft Ireland Operations Limited, One Microsoft Place, South County Business Park, Leopardstown, Dublin 18, Irlande. Base légale : intérêt légitime. Enregistrements supprimés après 30 jours, statistiques agrégées après 13 mois.</p>
+    <h2>4. Destinataires</h2><p>Aucune donnée n’est transmise à une banque, à une legaltech, à un cabinet comptable ni à une régie publicitaire. Sous-traitants : l’hébergeur et, le cas échéant, Microsoft pour la mesure anonyme.</p>
+    <h2>5. Transferts hors de l’Union européenne</h2><p>GitHub, Inc. et Microsoft Corporation sont établies aux États-Unis et adhèrent au cadre de protection des données UE-États-Unis ; des clauses contractuelles types s’appliquent aussi.</p>
+    <h2>6. Vos droits</h2><p>Accès, rectification, effacement, limitation, opposition et portabilité (articles 15 à 22 du RGPD) : écrivez à <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Réclamation : {LEGAL.supervisoryAuthority} (<a href={LEGAL.supervisoryAuthorityUrl} rel="nofollow noopener" target="_blank">{LEGAL.supervisoryAuthorityUrl}</a>).</p>
+    <h2>7. Pas de décision automatisée</h2><p>Un résultat de ce site n’a aucun effet juridique : l’Urssaf et le service des impôts calculent vos montants.</p>
+    <p>Voir aussi la page <a href={route('cookies', lang)}>cookies</a>. Version du {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

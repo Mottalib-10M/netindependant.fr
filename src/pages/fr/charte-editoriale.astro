@@ -1,0 +1,23 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, LAST_UPDATED } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'fr';
+---
+<PageLayout title="Charte éditoriale : comment NetIndé vérifie chaque taux" description="Charte éditoriale : sources officielles seulement, chaque taux 2026 relu et daté, tests automatiques contre le modèle de l’Urssaf, corrections publiées, aucune affiliation." lang={lang} noindex={true} breadcrumbs={[{ label: 'Charte éditoriale' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Charte éditoriale</h1>
+    <h2>Les sources</h2>
+    <p>Chaque taux, seuil ou montant vient d’une source officielle lue et datée : autoentrepreneur.urssaf.fr, urssaf.fr, service-public, impots.gouv.fr, Légifrance, le BOFiP, economie.gouv.fr et les fichiers publics de la DGFiP et de l’Insee. Un blog, un cabinet ou une legaltech n’est jamais une source. Un point incertain, comme une réforme annoncée mais non votée, ne se publie pas.</p>
+    <h2>Un seul fichier de paramètres</h2>
+    <p>Les valeurs vivent dans un fichier unique, avec leur source et leur date de lecture. Aucune page n’écrit un taux en dur : quand un paramètre change, toutes les pages et tous les simulateurs changent ensemble.</p>
+    <h2>Les vérifications</h2>
+    <p>Avant chaque mise en ligne, des tests automatiques comparent le moteur aux exemples chiffrés de service-public, aux montants minimaux et maximaux publiés par l’Urssaf et, sur une grille de cas, au modèle de calcul que l’Urssaf publie pour mon-entreprise. Un écart arrête la publication.</p>
+    <h2>Rythme de relecture</h2>
+    <p>Relecture complète en janvier (taux, plafond de la Sécurité sociale, barème de l’impôt), en juillet (taux réformés en cours d’année) et à la publication de chaque nouveau fichier REI. Dernière relecture : {LAST_UPDATED}.</p>
+    <h2>Corrections</h2>
+    <p>Une erreur signalée à <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> est vérifiée, corrigée et ajoutée aux tests. Les règles de calcul sont décrites sur la page <a href={route('method', lang)}>méthode de calcul</a>.</p>
+    <h2>Indépendance</h2>
+    <p>Pas d’affiliation, pas de lien commercial vers une banque, une legaltech ou un expert-comptable, pas de collecte d’adresse e-mail. Si le site affiche un jour de la publicité, ce ne sera ni au-dessus d’un simulateur ni dans un résultat.</p>
+  </div>
+</PageLayout>

@@ -1,0 +1,19 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, LAST_UPDATED } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'fr';
+---
+<PageLayout title="Cookies : aucun, même dans les simulateurs d’indépendants" description="Aucun cookie et aucun bandeau : les simulateurs auto-entrepreneur, CFE, EURL et SASU ne retiennent rien. Au plus, une mesure anonyme vérifie que les pages s’affichent bien." lang={lang} noindex={true} breadcrumbs={[{ label: 'Cookies' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Cookies</h1>
+    <p>Ce site <strong>ne dépose aucun cookie</strong> : il n’a donc pas besoin de bandeau de consentement. Le détail est dans la <a href={route('privacy', lang)}>politique de confidentialité</a>.</p>
+    <h2>Votre chiffre d’affaires reste sur votre appareil</h2>
+    <p>Chiffre d’affaires, commune, foyer fiscal : rien n’est écrit dans un cookie ni dans le stockage du navigateur. Fermez l’onglet, tout disparaît ; seul un lien que vous copiez vous-même les contient.</p>
+    <h2>Mesure anonyme des erreurs</h2>
+    <p>Si elle est activée, Microsoft Clarity vérifie en mode <strong>sans cookie</strong> que les pages se chargent correctement. Les cookies <code>_clck</code>, <code>_clsk</code>, <code>MUID</code> ou <code>CLID</code> ne sont pas créés et les saisies sont masquées. Prestataire : Microsoft Ireland Operations Limited, Dublin ; suppression après 30 jours (enregistrements) et 13 mois (statistiques).</p>
+    <h2>Simulateurs intégrés sur d’autres sites</h2>
+    <p>Les versions à intégrer ne chargent aucune mesure et ne déposent aucun cookie.</p>
+    <p>Pour bloquer la mesure, bloquez clarity.ms dans votre navigateur : chaque simulateur continue de fonctionner. Questions : <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Version du {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

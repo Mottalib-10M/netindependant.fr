@@ -1,0 +1,32 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { YEAR, LAST_UPDATED, AUTHOR_NAME, CONTACT_EMAIL, AUTHOR_ROLE, SITE_NAMES, LANG_TAGS } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { personSchema, organizationSchema, breadcrumbSchema, profilePageSchema } from '../../lib/seo';
+import { displayDate, formatPercent, formatMoney } from '../../lib/format';
+import { P } from '../../lib/engine/params';
+import { impotRevenu } from '../../lib/engine/ir';
+const exemple = impotRevenu(30000).impot;
+const lang = 'en';
+const pc = (x: number) => formatPercent(x, 1, lang);
+---
+<PageLayout title="NetIndé: who works out French self-employed pay, and how" description="Who publishes the NetIndé micro-enterprise, CFE, EURL and SASU calculators, why they exist, how each 2026 rate is checked and why the site sells nothing." lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'About', path: route('about', lang) }])]} breadcrumbs={[{ label: 'About' }]}>
+  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">About {SITE_NAMES.en}</h1></header>
+  <div class="prose prose-slate max-w-none">
+    <div class="not-prose mb-6"><p class="text-lg font-semibold text-navy-900">{AUTHOR_NAME}</p><p class="text-navy-700">{AUTHOR_ROLE[lang]}</p></div>
+    <p>{SITE_NAMES.en} is published by Radif Partners, an independent publisher of calculators. It started from what we found reading search results about going self-employed in France in 2026: one page still showed {pc(P.micro.historique_bnc.jusqu_a_2024_06)} contributions for freelancers when the rate is {pc(P.micro.taux.bnc)}; another put charges at “about 70%” and then “82%” on the same page; a third wanted an email address before the first question; and the official calculator, accurate as it is, left out the CFE local business tax, which depends on the commune. English speakers had even less: most pages assume you already know what the Urssaf, a versement libératoire or a quotient familial is.</p>
+    <h2>What this site sets out to do better than the first result</h2>
+    <p>Show at once, with no email and from the first entry, a micro-entrepreneur’s take-home pay using sourced 2026 Urssaf rates, the household’s income tax and the CFE actually voted in their commune, then the same figure as a sole trader, an EURL, a SASU and under umbrella employment, with the self-employed scale reformed in 2026. CFE rates and minimum bases come commune by commune from the DGFiP REI file.</p>
+    <h2>How every figure is checked</h2>
+    <p>Rates, thresholds and scales are read on autoentrepreneur.urssaf.fr, urssaf.fr, service-public, impots.gouv.fr and Légifrance, then kept in one file with their source and date. Before each release, tests compare the engine with official examples (tax of {formatMoney(exemple, 2, lang)} on {formatMoney(30000, 0, lang)} of income, the low-income discount, pro-rated ceilings) and, on a grid of cases, with the calculation model the Urssaf publishes for mon-entreprise. Details are on <a href={route('method', lang)}>how we calculate</a>.</p>
+    <h2>What we are not</h2>
+    <p>Not the Urssaf, not the tax administration, not an accountant and not a company formation service. We set up no businesses, keep no books and take no commission. Results are estimates, not personal advice: your actual amounts are set by the Urssaf and the tax office.</p>
+    <h2>Funding and data</h2>
+    <p>The calculators are free. What you type stays in your browser. If the site ever shows ads, they will not sit above a calculator or inside a result.</p>
+    <h2>Written for people new to France</h2>
+    <p>Every page exists in French and in English. The English pages are written for someone who moved to France and wants to work for themselves: French terms are explained the first time they appear, amounts stay in euros, and the rules are the French ones, not a translation of another country’s.</p>
+    <h2>Contact</h2>
+    <p>A rate looks wrong, your schedule differs, a case is missing? Write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. See also the <a href={route('editorial', lang)}>editorial policy</a> and the <a href={route('terms', lang)}>legal notice</a>.</p>
+    <p class="text-sm text-navy-600">Rules for {YEAR}, checked on <time datetime={LAST_UPDATED}>{displayDate(LAST_UPDATED, LANG_TAGS[lang])}</time>.</p>
+  </div>
+</PageLayout>

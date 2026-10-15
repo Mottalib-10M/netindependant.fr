@@ -1,0 +1,26 @@
+---
+/** Page intégrable (iframe) : simulateur sans navigation. noindex, hors sitemap (astro.config). ?lang=en bascule la langue. */
+import '../../styles/global.css';
+import MicroRechner from '../../components/calc/MicroRechner';
+import { SITE_URL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const fr = route('home', 'fr'), en = route('home', 'en');
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulateur auto-entrepreneur 2026</title>
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={`${SITE_URL}${fr}`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="bg-white p-2 text-navy-900">
+    <div id="fr-view"><MicroRechner client:load lang="fr" /></div>
+    <div id="en-view" hidden><MicroRechner client:load lang="en" /></div>
+    <p class="mt-2 text-center text-xs text-navy-600"><a id="credit" href={`${SITE_URL}${fr}`} data-en={`${SITE_URL}${en}`} target="_blank" rel="noopener" class="underline">Simulateur auto-entrepreneur 2026 · NetIndé</a></p>
+    <script is:inline>
+      if (new URLSearchParams(location.search).get('lang') === 'en') { document.getElementById('fr-view').hidden = true; document.getElementById('en-view').hidden = false; document.documentElement.lang = 'en'; var c = document.getElementById('credit'); c.textContent = 'French micro-enterprise calculator 2026 · NetIndé'; c.href = c.dataset.en; }
+    </script>
+  </body>
+</html>

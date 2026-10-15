@@ -1,0 +1,20 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { contactPageSchema } from '../../lib/seo';
+const lang = 'en';
+const description = 'Write to us if a 2026 rate looks wrong, if your Urssaf schedule or CFE notice differs from the calculator, or if you want to embed a calculator on your own site.';
+---
+<PageLayout title={`Contact ${SITE_NAMES[lang]}: report an error or embed a calculator`} description={description} lang={lang} noindex={true} jsonLd={[contactPageSchema({ name: 'Contact', description, path: route('contact', lang), lang })]} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Contact</h1>
+    <p>Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. We usually reply within a week, in English or French.</p>
+    <h2>Your schedule or notice differs from the calculator</h2>
+    <p>Send the share link from the calculator and the relevant line of your Urssaf payment schedule, tax notice or CFE notice, without your name or Siret number. Differences often come from mixed activities, an Acre period spanning two years, a recent decision by your commune or business premises. If the error is ours, we fix it and add your case to our tests.</p>
+    <h2>Embedding a calculator</h2>
+    <p>Expat networks, relocation services, business incubators and newsrooms can embed the calculators free of charge: see <a href={route('widget', lang)}>embed a calculator</a>.</p>
+    <h2>What we do not do</h2>
+    <p>No personal advice, no company formation, no bookkeeping, no referrals to banks or firms. The Urssaf, your business tax office and the chambers of commerce and trades answer individual questions free of charge.</p>
+  </div>
+</PageLayout>

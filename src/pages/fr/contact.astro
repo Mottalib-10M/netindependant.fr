@@ -1,0 +1,20 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { contactPageSchema } from '../../lib/seo';
+const lang = 'fr';
+const description = 'Écrivez-nous si un taux 2026 vous semble faux, si votre échéancier Urssaf ou votre avis de CFE diffère du simulateur, ou pour intégrer un simulateur sur votre site.';
+---
+<PageLayout title={`Contact ${SITE_NAMES[lang]} : signaler une erreur, intégrer un outil`} description={description} lang={lang} noindex={true} jsonLd={[contactPageSchema({ name: 'Contact', description, path: route('contact', lang), lang })]} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Contact</h1>
+    <p>Adresse : <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Réponse en général sous une semaine, en français ou en anglais.</p>
+    <h2>Votre échéancier ou votre avis diffère du simulateur</h2>
+    <p>Envoyez le lien de partage du simulateur et la ligne concernée de votre échéancier Urssaf, de votre avis d’impôt ou de votre avis de CFE, sans nom ni numéro Siret. Les écarts viennent souvent d’une activité mixte, d’une période d’Acre à cheval sur deux années, d’une délibération communale récente ou d’un local professionnel. Si l’erreur est la nôtre, nous la corrigeons et ajoutons votre cas aux tests.</p>
+    <h2>Intégrer un simulateur</h2>
+    <p>Associations de créateurs, couveuses, réseaux d’accompagnement, médias : les simulateurs s’intègrent gratuitement, voir <a href={route('widget', lang)}>intégrer un simulateur</a>.</p>
+    <h2>Ce que nous ne faisons pas</h2>
+    <p>Pas de conseil personnalisé, pas de création d’entreprise, pas de tenue de comptabilité, pas de mise en relation avec une banque ou un cabinet. L’Urssaf, le service des impôts des entreprises et les chambres consulaires répondent gratuitement aux questions individuelles.</p>
+  </div>
+</PageLayout>

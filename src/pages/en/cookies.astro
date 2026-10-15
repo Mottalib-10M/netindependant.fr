@@ -1,0 +1,19 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, LAST_UPDATED } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'en';
+---
+<PageLayout title="Cookies: none, not even in the self-employed calculators" description="No cookies and no banner: the micro-enterprise, CFE, EURL and SASU calculators remember nothing. At most, an anonymous check confirms that pages display correctly." lang={lang} noindex={true} breadcrumbs={[{ label: 'Cookies' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Cookies</h1>
+    <p>This site <strong>sets no cookies</strong>, so it needs no consent banner. Details are in the <a href={route('privacy', lang)}>privacy policy</a>.</p>
+    <h2>Your turnover stays on your device</h2>
+    <p>Turnover, commune, household: nothing is written to a cookie or to browser storage. Close the tab and it is gone; only a link you copy yourself contains it.</p>
+    <h2>Anonymous error tracking</h2>
+    <p>If enabled, Microsoft Clarity checks in <strong>cookieless</strong> mode that pages load correctly. Cookies such as <code>_clck</code>, <code>_clsk</code>, <code>MUID</code> or <code>CLID</code> are not created and inputs are masked. Provider: Microsoft Ireland Operations Limited, Dublin; deletion after 30 days (recordings) and 13 months (statistics).</p>
+    <h2>Calculators embedded on other sites</h2>
+    <p>Embedded versions load no tracking and set no cookies.</p>
+    <p>To block tracking, block clarity.ms in your browser: every calculator keeps working. Questions: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Version of {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

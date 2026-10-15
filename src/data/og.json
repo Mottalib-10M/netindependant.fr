@@ -1,0 +1,20 @@
+{
+ "accent": "#0F4C5C",
+ "symbol": "AE",
+ "variants": [
+  {
+   "file": "og-fr.png",
+   "title": "Auto-entrepreneur 2026\nle net, tout de suite",
+   "subtitle": "Cotisations · Versement libératoire · CFE par commune · EURL ou SASU",
+   "badge": "Taux Urssaf 2026 sourcés",
+   "brand": "NetIndé"
+  },
+  {
+   "file": "og-en.png",
+   "title": "Self-employed in France 2026\nwhat you keep",
+   "subtitle": "Micro-enterprise · Contributions · CFE · EURL or SASU",
+   "badge": "2026 Urssaf rates, sourced",
+   "brand": "NetIndé"
+  }
+ ]
+}

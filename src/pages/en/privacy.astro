@@ -1,0 +1,27 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { CONTACT_EMAIL, LEGAL, SITE_URL, LAST_UPDATED } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'en';
+---
+<PageLayout title="Privacy: your turnover figures stay on your own device" description="Privacy policy under the GDPR: the turnover, commune and household details you type stay in your browser; no cookies, no email asked, only hosting logs are processed." lang={lang} noindex={true} breadcrumbs={[{ label: 'Privacy' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Privacy policy</h1>
+    <p>Estimating self-employed income means typing a turnover, a commune and sometimes a partner’s income. The calculators on {SITE_URL} are built so that the publisher receives none of it, and the site never asks for an email address.</p>
+    <h2>1. Controller</h2>
+    <LegalIdentity lang={lang} />
+    <p>Contact: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. No data protection officer has been appointed, as Article 37 GDPR does not require one here.</p>
+    <h2>2. What you type</h2>
+    <p>All calculations run in your browser. <strong>Your inputs are neither sent to the publisher nor stored.</strong> After your first input, the calculator copies them into the page address so you can share a result; that address stays on your device unless you pass it on. When you pick a département, your browser downloads the public list of communes and their CFE rates from this site; nothing you typed goes with that request.</p>
+    <h2>3. Processing</h2>
+    <h3>Hosting logs</h3><p>For each page view the host processes technical data (IP address, time, page requested, browser, referrer) to serve and protect the site. Legal basis: legitimate interest (Art. 6(1)(f) GDPR); retention set by the host.</p>
+    <h3>No cookies</h3><p>The site sets no cookies and writes nothing to your browser storage.</p>
+    <h3>Anonymous error tracking (Microsoft Clarity, cookieless)</h3><p>If enabled, Clarity in cookieless mode records loading errors, load times, clicks with no effect and scrolling, so that a broken calculator is spotted. Input fields are masked before sending and each visit gets a new identifier. Provider: Microsoft Ireland Operations Limited, One Microsoft Place, South County Business Park, Leopardstown, Dublin 18, Ireland. Legal basis: legitimate interest. Recordings deleted after 30 days, aggregate statistics after 13 months.</p>
+    <h2>4. Recipients</h2><p>No data goes to banks, company formation services, accounting firms or ad networks. Processors: the host and, where enabled, Microsoft for anonymous tracking.</p>
+    <h2>5. Transfers outside the EU</h2><p>GitHub, Inc. and Microsoft Corporation are based in the United States and certified under the EU-US Data Privacy Framework; standard contractual clauses also apply.</p>
+    <h2>6. Your rights</h2><p>Access, rectification, erasure, restriction, objection and portability (Articles 15 to 22 GDPR): write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Complaints: {LEGAL.supervisoryAuthority} (<a href={LEGAL.supervisoryAuthorityUrl} rel="nofollow noopener" target="_blank">{LEGAL.supervisoryAuthorityUrl}</a>).</p>
+    <h2>7. No automated decisions</h2><p>A result on this site has no legal effect: the Urssaf and the tax office work out your actual amounts.</p>
+    <p>See also <a href={route('cookies', lang)}>cookies</a>. Version of {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

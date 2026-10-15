@@ -1,0 +1,32 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { YEAR, LAST_UPDATED, AUTHOR_NAME, CONTACT_EMAIL, AUTHOR_ROLE, SITE_NAMES, LANG_TAGS } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { personSchema, organizationSchema, breadcrumbSchema, profilePageSchema } from '../../lib/seo';
+import { displayDate, formatPercent, formatMoney } from '../../lib/format';
+import { P } from '../../lib/engine/params';
+import { impotRevenu } from '../../lib/engine/ir';
+const exemple = impotRevenu(30000).impot;
+const lang = 'fr';
+const pc = (x: number) => formatPercent(x, 1, lang);
+---
+<PageLayout title="NetIndé : qui calcule le net des indépendants, et comment" description="Qui publie les simulateurs auto-entrepreneur, CFE, EURL et SASU de NetIndé, comment chaque taux 2026 est vérifié et pourquoi le site ne vend rien du tout." lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Accueil', path: route('home', lang) }, { name: 'À propos', path: route('about', lang) }])]} breadcrumbs={[{ label: 'À propos' }]}>
+  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">À propos de {SITE_NAMES.fr}</h1></header>
+  <div class="prose prose-slate max-w-none">
+    <div class="not-prose mb-6"><p class="text-lg font-semibold text-navy-900">{AUTHOR_NAME}</p><p class="text-navy-700">{AUTHOR_ROLE[lang]}</p></div>
+    <p>{SITE_NAMES.fr} est publié par Radif Partners, éditeur indépendant de simulateurs. Le site est né d’un constat fait en lisant les résultats de recherche sur le statut d’auto-entrepreneur en 2026 : une page annonçait encore {pc(P.micro.historique_bnc.jusqu_a_2024_06)} de cotisations pour les libéraux, alors que le taux est de {pc(P.micro.taux.bnc)} ; une autre parlait de charges « d’environ 70 % » puis « de 82 % » sur la même page ; une troisième demandait une adresse e-mail avant de poser la première question ; et le simulateur officiel, juste, laissait de côté la cotisation foncière des entreprises, qui dépend pourtant de la commune.</p>
+    <h2>Ce que ce site veut faire mieux que le premier résultat</h2>
+    <p>Donner tout de suite, sans e-mail et dès la première saisie, le net en poche d’un auto-entrepreneur avec les taux Urssaf 2026 sourcés, l’impôt au barème du foyer et la CFE réellement votée dans sa commune, puis le même chiffre en entreprise individuelle, en EURL, en SASU et en portage, avec le barème des indépendants réformé en 2026. Les taux et bases minimum de CFE viennent du fichier REI de la DGFiP, commune par commune.</p>
+    <h2>Comment chaque chiffre est vérifié</h2>
+    <p>Les taux, seuils et barèmes sont lus sur autoentrepreneur.urssaf.fr, urssaf.fr, service-public, impots.gouv.fr et Légifrance, puis rangés dans un seul fichier avec leur source et leur date. Avant chaque mise en ligne, des tests comparent le moteur aux exemples officiels (impôt de {formatMoney(exemple, 2, lang)} pour {formatMoney(30000, 0, lang)} de revenu, décote, plafonds proratisés) et, sur une grille de cas, au modèle de calcul que l’Urssaf publie pour mon-entreprise. Le détail est sur la page <a href={route('method', lang)}>méthode de calcul</a>.</p>
+    <h2>Ce que nous ne sommes pas</h2>
+    <p>Ni l’Urssaf, ni l’administration fiscale, ni un expert-comptable, ni une legaltech. Nous ne créons pas d’entreprise, ne tenons pas de comptabilité et ne touchons aucune commission. Les résultats sont des estimations, pas un conseil personnalisé : vos montants réels sont fixés par l’Urssaf et le service des impôts.</p>
+    <h2>Financement et données</h2>
+    <p>Les simulateurs sont gratuits. Ce que vous saisissez reste dans votre navigateur. Si le site affiche un jour de la publicité, ce ne sera ni au-dessus d’un simulateur ni dans un résultat.</p>
+    <h2>En anglais</h2>
+    <p>Chaque page existe en anglais, écrite pour une personne venue de l’étranger qui veut se mettre à son compte en France : les termes comme Urssaf, CFE, versement libératoire ou quotient familial y sont expliqués.</p>
+    <h2>Contact</h2>
+    <p>Un taux vous semble faux, votre échéancier diffère, un cas manque ? Écrivez à <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Voir aussi la <a href={route('editorial', lang)}>charte éditoriale</a> et les <a href={route('terms', lang)}>mentions légales</a>.</p>
+    <p class="text-sm text-navy-600">Règles {YEAR}, relues le <time datetime={LAST_UPDATED}>{displayDate(LAST_UPDATED, LANG_TAGS[lang])}</time>.</p>
+  </div>
+</PageLayout>
