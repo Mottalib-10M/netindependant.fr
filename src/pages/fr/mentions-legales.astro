@@ -1,7 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import LegalIdentity from '../../components/LegalIdentity.astro';
-import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, SITE_URL } from '../../data/site-config';
+import { AUTHOR_NAME, CLARITY_ID, CONTACT_EMAIL, GA4_ID, LAST_UPDATED, SITE_URL } from '../../data/site-config';
 import { route } from '../../i18n/routes';
 const lang = 'fr';
 ---
@@ -19,6 +19,10 @@ const lang = 'fr';
     <p>Le site estime les cotisations, l’impôt et le revenu net d’un indépendant en France (micro-entreprise, entreprise individuelle, EURL, SASU, portage salarial) à partir des taux publiés par l’Urssaf et des barèmes de l’administration fiscale. Il n’est ni l’Urssaf, ni un service de l’administration, ni un expert-comptable, et ne délivre aucun conseil personnalisé. La méthode est publiée sur la page <a href={route('method', lang)}>méthode de calcul</a>.</p>
     <h2>Responsabilité</h2>
     <p>Les paramètres sont relus sur les sources officielles à chaque changement de taux et testés automatiquement avant chaque mise en ligne ; une erreur reste possible. Seuls l’Urssaf et le service des impôts fixent vos montants. Les sites liés, tous officiels, relèvent de leurs éditeurs. Signalez une erreur depuis la page <a href={route('contact', lang)}>contact</a>.</p>
+    {/* gen-legal-pages:terms */}
+    <h2>Données personnelles et cookies</h2>
+    {GA4_ID ? (<p>Les saisies des calculateurs ne quittent pas votre navigateur. Le site dépose des cookies de mesure d’audience Google Analytics (<code>_ga</code>, <code>_ga_{GA4_ID.replace('G-', '')}</code>, 13 mois au plus), sans publicité{CLARITY_ID && ' ; la stabilité des pages est mesurée avec Microsoft Clarity, sans cookie'}. Détails, base juridique et moyens de vous y opposer : <a href={route('privacy', lang)}>politique de confidentialité</a> et page <a href={route('cookies', lang)}>cookies</a>.</p>) : (<p>Les saisies des calculateurs ne quittent pas votre navigateur et le site ne dépose aucun cookie{CLARITY_ID && ' ; la stabilité des pages est mesurée de façon anonyme avec Microsoft Clarity, sans cookie'}. Voir la <a href={route('privacy', lang)}>politique de confidentialité</a> et la page <a href={route('cookies', lang)}>cookies</a>.</p>)}
+    {/* /gen-legal-pages:terms */}
     <h2>Propriété intellectuelle et données réutilisées</h2>
     <p>Les textes et le code du site appartiennent à l’éditeur. Les taux et bases de CFE par commune proviennent du fichier REI de la DGFiP et les noms de communes du code officiel géographique de l’Insee, réutilisés sous Licence Ouverte 2.0 avec mention de la source. Les simulateurs peuvent être intégrés gratuitement : <a href={route('widget', lang)}>intégrer un simulateur</a>.</p>
     <p>Données personnelles : <a href={route('privacy', lang)}>politique de confidentialité</a> et <a href={route('cookies', lang)}>cookies</a>. Version du {LAST_UPDATED}.</p>
